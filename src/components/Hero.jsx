@@ -1,8 +1,17 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
 
 function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+
+  const yTitle = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const ySub = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const opacityCta = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
-    <section id="explore" className="relative min-h-screen w-full overflow-hidden bg-black">
+    <section ref={ref} id="explore" className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* 3D Scene */}
       <div className="absolute inset-0">
         <Spline
@@ -23,13 +32,14 @@ function Hero() {
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide uppercase border border-white/15 mb-6">
             Immersive • 3D • Interactive
           </span>
-          <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
+          <motion.h1 style={{ y: yTitle }}
+            className="text-4xl md:text-6xl font-semibold leading-tight">
             Step into a cyber‑futuristic web experience
-          </h1>
-          <p className="mt-5 text-white/80 md:text-lg">
+          </motion.h1>
+          <motion.p style={{ y: ySub }} className="mt-5 text-white/80 md:text-lg">
             A dark, surreal interface where a retro astronaut meets iridescent motion. Explore a new dimension of interaction right in your browser.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          </motion.p>
+          <motion.div style={{ opacity: opacityCta }} className="mt-8 flex flex-wrap gap-3">
             <a
               href="#features"
               className="rounded-md bg-white text-black px-5 py-3 font-medium hover:bg-white/90 transition"
@@ -42,6 +52,12 @@ function Hero() {
             >
               Learn More
             </a>
+          </motion.div>
+          <div className="mt-10">
+            <div className="pointer-events-none inline-flex items-center gap-2 text-white/60 text-sm">
+              <span className="h-2 w-2 rounded-full bg-white/50 animate-pulse" />
+              Scroll to explore
+            </div>
           </div>
         </div>
       </div>
