@@ -10,7 +10,7 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  const NavLink = ({ href, children }) => (
     <a href={href} className="relative text-white/80 hover:text-white transition-colors">
       <span className="after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white/60 after:transition-all hover:after:w-full">
         {children}

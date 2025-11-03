@@ -3,32 +3,7 @@
 > vite
 
 
-  VITE v5.4.20  ready in 249 ms
+  VITE v5.4.20  ready in 248 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.1.103:3000/
-11:35:17 PM [vite] Pre-transform error: Transform failed with 1 error:
-/home/workspace/src/components/Navbar.jsx:13:37: ERROR: Expected ")" but found ":"
-11:35:19 PM [vite] Internal server error: Transform failed with 1 error:
-/home/workspace/src/components/Navbar.jsx:13:37: ERROR: Expected ")" but found ":"
-  Plugin: vite:esbuild
-  File: /home/workspace/src/components/Navbar.jsx:13:37
-  
-  Expected ")" but found ":"
-  11 |    }, []);
-  12 |  
-  13 |    const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-     |                                       ^
-  14 |      <a href={href} className="relative text-white/80 hover:text-white transition-colors">
-  15 |        <span className="after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white/60 after:transition-all hover:after:w-full">
-  
-      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
-      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
-      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
-      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
-      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
-      at Socket.emit (node:events:508:28)
-      at addChunk (node:internal/streams/readable:559:12)
-      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
-      at Readable.push (node:internal/streams/readable:390:5)
-      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)

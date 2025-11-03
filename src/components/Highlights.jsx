@@ -49,7 +49,7 @@ function Highlights() {
           {features.map(({ title, desc, icon: Icon }) => (
             <div
               key={title}
-              className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 transition"
+              className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition"
             >
               <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
                 <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-fuchsia-500/20 blur-3xl" />
